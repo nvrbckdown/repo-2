@@ -58,9 +58,17 @@ const getLoad = (req, res) => {
   res.json(message);
 };
 
+const getHealth = (req, res) => {
+  const message = {
+    'health': 'true'
+  }
+  res.json(message);
+};
+
 app.get('/config', getConfig);
 app.get('/domain', getDomain);
 app.get('/load-capability', getLoad);
+app.get('/health');
 
 const port = 80;
 app.listen(port, () => {
